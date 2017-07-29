@@ -1,9 +1,13 @@
 # Docker C++ Libraries
 
 This Project is meant as a basis for developing software that is aimed at docker.
+It contains a collection of scripts for compiling and installing several C++ libraries.
+
+# Getting started
 
 
-## License
+
+# License
 
 The MIT License (MIT)
 
