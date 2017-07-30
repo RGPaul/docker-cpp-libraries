@@ -69,6 +69,10 @@ function build()
     make
     make install
 
+    cp lib/*.a /usr/local/lib
+
+    rm /usr/local/lib64/libsoci_*.a || true
+
     cd "${CURRENT_DIR}"
 }
 

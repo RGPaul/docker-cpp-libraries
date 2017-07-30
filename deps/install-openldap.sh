@@ -31,7 +31,6 @@ declare OPENLDAP_VERSION=2.4.44
 declare CURRENT_DIR=$(pwd)
 declare OPENLDAP_TARBALL="openldap-${OPENLDAP_VERSION}.tgz"
 declare OPENLDAP_DOWNLOAD_URI="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/${OPENLDAP_TARBALL}"
-declare OPENLDAP_INSTALL_FOLDER="${CURRENT_DIR}/openldap-${OPENLDAP_VERSION}"
 
 #=======================================================================================================================
 
@@ -68,7 +67,7 @@ function build()
     # configure / build / install (to seperate folder)
     ./configure --disable-slapd --disable-shared --enable-static
     make
-    make install DESTDIR="${CURRENT_DIR}/openldap"
+    make install
 
     cd "${CURRENT_DIR}"
 }
@@ -82,42 +81,6 @@ function cleanup()
 
 #=======================================================================================================================
 
-function copy()
-{
-    echo "copy results ..."
-
-    # create temp folders
-    mkdir /tmp/include || true
-    mkdir /tmp/lib || true
-    mkdir /tmp/etc || true
-    mkdir /tmp/bin || true
-
-    # copy new libs
-    cp ${CURRENT_DIR}/openldap/usr/local/lib/*a \
-      /tmp/lib
-
-    cp -r ${CURRENT_DIR}/openldap/usr/local/include/* \
-      /tmp/include/
-
-    cp -r ${CURRENT_DIR}/openldap/usr/local/etc/openldap \
-      /tmp/etc/
-
-    cp -r ${CURRENT_DIR}/openldap/usr/local/bin/* \
-      /tmp/bin/
-
-    mkdir "${OPENLDAP_INSTALL_FOLDER}" 
-    mv /tmp/include "${OPENLDAP_INSTALL_FOLDER}"
-    mv /tmp/lib "${OPENLDAP_INSTALL_FOLDER}"
-    mv /tmp/etc "${OPENLDAP_INSTALL_FOLDER}"
-    mv /tmp/bin "${OPENLDAP_INSTALL_FOLDER}"
-
-    rm -r "${CURRENT_DIR}/openldap"
-
-    cd "${CURRENT_DIR}"
-}
-
-#=======================================================================================================================
-
 echo "################################################################################\n"
 echo "###                            INSTALLING OpenLDAP                           ###\n"
 echo "################################################################################\n"
@@ -127,4 +90,3 @@ download
 unpack
 build
 cleanup
-copy
