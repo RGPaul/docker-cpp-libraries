@@ -29,6 +29,10 @@ if [ "$1" = 'install' ]; then
     /root/deps/install-libressl.sh
   fi
 
+  if [ "${INSTALL_OPENSSL}" = "TRUE" ]; then
+    /root/deps/install-openssl.sh
+  fi
+
   # required OpenSSL / LibreSSL
   if [ "${INSTALL_AWS_SDK}" = "TRUE" ]; then
     /root/deps/install-aws-sdk.sh
@@ -71,6 +75,11 @@ if [ "$1" = 'install' ]; then
 
   if [ "${INSTALL_PLUSTACHE}" = "TRUE" ]; then
     /root/deps/install-plustache.sh
+  fi
+
+  # requires OpenSSL / LibreSSL
+  if [ "${INSTALL_CNATS}" = "TRUE" ]; then
+    /root/deps/install-cnats.sh
   fi
 
   echo "################################################################################\n"

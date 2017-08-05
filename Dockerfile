@@ -123,3 +123,8 @@ ENV INSTALL_CRYPTOPP=TRUE
 
 # plustache - {{mustaches}} for C++ - https://github.com/mrtazz/plustache
 ENV INSTALL_PLUSTACHE=TRUE
+
+# nats Library for C - https://github.com/nats-io/cnats
+# requires OpenSSL / LibreSSL
+ENV INSTALL_CNATS=TRUE
+
