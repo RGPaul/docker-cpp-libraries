@@ -1,2 +1,5 @@
-prebuild-deps/include/.keep
-prebuild-deps/lib/.keep
+.keep
+.git/
+.gitignore
+LICENSE
+README.md
