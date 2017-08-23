@@ -17,7 +17,7 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # ----------------------------------------------------------------------------------------------------------------------
 
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER Ralph-Gordon Paul <gordon@rgpaul.com>
 
 # set timezone to germany
@@ -34,7 +34,7 @@ RUN apt-get update -y \
 
 # install cmake
 RUN apt-get update -y \
-  && curl -o /root/cmake.sh https://cmake.org/files/v3.9/cmake-3.9.0-Linux-x86_64.sh \
+  && curl -o /root/cmake.sh https://cmake.org/files/v3.9/cmake-3.9.1-Linux-x86_64.sh \
   && /bin/bash /root/cmake.sh --exclude-subdir --prefix=/usr/ \
   # cleanup
   && rm /root/cmake.sh \
@@ -60,6 +60,7 @@ RUN apt-get update \
     libcurl4-openssl-dev \
     libicu-dev libbz2-dev \
     libz-dev \
+    libpulse-dev \
   # cleanup
   && rm -rf /var/lib/apt/lists/*
 
