@@ -24,8 +24,8 @@ set -e
 # settings
 
 declare BOOST_LIBS="atomic chrono date_time exception filesystem program_options random signals system thread test"
-declare BOOST_VERSION=1.64.0
-declare BOOST_VERSION2=1_64_0
+declare BOOST_VERSION=1.65.1
+declare BOOST_VERSION2=1_65_1
 declare TOOLSET="gcc"
 
 #=======================================================================================================================

@@ -26,7 +26,7 @@ echo "##########################################################################
 
 declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-declare LIBRARY_VERSION=1.6.0
+declare LIBRARY_VERSION=1.7.4
 
 # only download if not already present
 if [ ! -f cnats-${LIBRARY_VERSION}.tar.gz ]; then
