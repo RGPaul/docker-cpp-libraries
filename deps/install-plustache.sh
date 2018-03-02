@@ -28,7 +28,7 @@ declare PLUSTACHE_VERSION=0.4.0
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare PLUSTACHE_TARBALL="plustache-${PLUSTACHE_VERSION}.tar.gz"
 declare PLUSTACHE_DOWNLOAD_URI="https://github.com/mrtazz/plustache/archive/${PLUSTACHE_VERSION}.tar.gz"
 

@@ -22,11 +22,13 @@ set -e
 
 #=======================================================================================================================
 # settings
-declare SQLITE_VERSION=3210000
+
+declare SQLITE_VERSION=3220000
 
 #=======================================================================================================================
 # globals
-declare CURRENT_DIR=$(pwd)
+
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare SQLITE_TARBALL="sqlite-autoconf-${SQLITE_VERSION}.tar.gz"
 declare SQLITE_FOLDER="${CURRENT_DIR}/sqlite-autoconf-${SQLITE_VERSION}"
 
@@ -37,7 +39,7 @@ function download()
     # only download if not already present
     if [ ! -s ${SQLITE_TARBALL} ]; then
         echo "Downloading ${SQLITE_TARBALL}"
-        curl -L -o ${SQLITE_TARBALL} "https://www.sqlite.org/2017/${SQLITE_TARBALL}"
+        curl -L -o ${SQLITE_TARBALL} "https://www.sqlite.org/2018/${SQLITE_TARBALL}"
     else
         echo "${SQLITE_TARBALL} already existing"
     fi

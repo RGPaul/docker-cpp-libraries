@@ -23,6 +23,11 @@ set -e
 # if the command starts with install, we will install (compile) all dependencies
 if [ "$1" = 'install' ]; then
 
+  if [ -f "/root/.install_done" ]; then
+    echo "installation was previously executed"
+    exec bash
+  fi
+
   cd /root/deps
 
   if [ "${INSTALL_LIBRESSL}" = "TRUE" ]; then
@@ -81,6 +86,8 @@ if [ "$1" = 'install' ]; then
   if [ "${INSTALL_CNATS}" = "TRUE" ]; then
     /root/deps/install-cnats.sh
   fi
+
+  touch "/root/.install_done"
 
   echo "################################################################################\n"
   echo "###                        INSTALLING Libraries done                         ###\n"

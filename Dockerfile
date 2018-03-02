@@ -17,7 +17,7 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # ----------------------------------------------------------------------------------------------------------------------
 
-FROM debian:stretch
+FROM debian:stretch-20171210
 MAINTAINER Ralph-Gordon Paul <gordon@rgpaul.com>
 
 # set timezone to germany
@@ -34,7 +34,7 @@ RUN apt-get update -y \
 
 # install cmake
 RUN apt-get update -y \
-  && curl -o /root/cmake.sh https://cmake.org/files/v3.10/cmake-3.10.1-Linux-x86_64.sh \
+  && curl -o /root/cmake.sh https://cmake.org/files/v3.10/cmake-3.10.2-Linux-x86_64.sh \
   && /bin/bash /root/cmake.sh --exclude-subdir --prefix=/usr/ \
   # cleanup
   && rm /root/cmake.sh \
@@ -84,8 +84,8 @@ COPY ./prebuild-deps/lib /usr/local/lib
 ### set all dependencies you want compiled/installed to TRUE ###
 
 # AWS SDK for C++ - https://github.com/aws/aws-sdk-cpp
-# requires LibreSSL / OpenSSL
-ENV INSTALL_AWS_SDK=TRUE
+# requires LibreSSL or OpenSSL
+ENV INSTALL_AWS_SDK=FALSE
 
 # Boost Library - http://www.boost.org
 ENV INSTALL_BOOST=TRUE

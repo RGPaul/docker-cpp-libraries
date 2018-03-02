@@ -23,12 +23,12 @@ set -e
 # ----------------------------------------------------------------------------------------------------------------------
 # settings
 
-declare OPENLDAP_VERSION=2.4.45
+declare OPENLDAP_VERSION=2.4.44
 
 # ----------------------------------------------------------------------------------------------------------------------
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare OPENLDAP_TARBALL="openldap-${OPENLDAP_VERSION}.tgz"
 declare OPENLDAP_DOWNLOAD_URI="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/${OPENLDAP_TARBALL}"
 

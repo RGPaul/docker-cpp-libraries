@@ -28,7 +28,7 @@ declare SOCI_VERSION=3.2.3
 # ----------------------------------------------------------------------------------------------------------------------
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare SOCI_TARBALL="soci-${SOCI_VERSION}.tar.gz"
 declare SOCI_DOWNLOAD_URI="https://github.com/SOCI/soci/archive/${SOCI_VERSION}.tar.gz"
 

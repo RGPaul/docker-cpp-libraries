@@ -23,15 +23,16 @@ set -e
 #=======================================================================================================================
 # settings
 
-declare BOOST_LIBS="atomic chrono date_time exception filesystem program_options random signals system thread test"
-declare BOOST_VERSION=1.65.1
-declare BOOST_VERSION2=1_65_1
+#declare BOOST_LIBS="atomic chrono date_time exception filesystem program_options random signals system thread test"
+declare BOOST_LIBS="atomic chrono container context coroutine date_time exception fiber filesystem graph iostreams locale log math program_options random regex serialization signals system test thread timer type_erasure wave"
+declare BOOST_VERSION=1.66.0
+declare BOOST_VERSION2=1_66_0
 declare TOOLSET="gcc"
 
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare BOOST_INSTALL_PREFIX="/usr/local"
 declare SRCDIR="${CURRENT_DIR}/src"
 declare BOOST_TARBALL="${CURRENT_DIR}/boost_$BOOST_VERSION2.tar.gz"

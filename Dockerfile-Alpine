@@ -17,7 +17,7 @@
 # OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # ----------------------------------------------------------------------------------------------------------------------
 
-FROM alpine:3.6
+FROM alpine:3.7
 MAINTAINER Ralph-Gordon Paul <gordon@rgpaul.com>
 
 RUN apk update

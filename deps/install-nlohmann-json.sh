@@ -23,12 +23,12 @@ set -e
 #=======================================================================================================================
 # settings
 
-declare NLOHMANN_JSON_VERSION=2.1.1
+declare NLOHMANN_JSON_VERSION=3.1.0
 
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare NLOHMANN_FOLDER="json-${NLOHMANN_JSON_VERSION}"
 declare NLOHMANN_TARBALL="nlohmann-json-${NLOHMANN_JSON_VERSION}.tar.gz"
 declare NLOHMANN_DOWNLOAD_URI="https://github.com/nlohmann/json/archive/v${NLOHMANN_JSON_VERSION}.tar.gz"

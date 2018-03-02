@@ -24,6 +24,7 @@ echo "##########################################################################
 echo "###                            INSTALLING OpenSSL                            ###\n"
 echo "################################################################################\n"
 
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #declare OPENSSL_VERSION="1.1.0f"
 declare OPENSSL_VERSION="1.0.2l"

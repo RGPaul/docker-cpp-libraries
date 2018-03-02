@@ -28,7 +28,7 @@ declare CPPRESTSDK_VERSION=2.10.1
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare CPPRESTSDK_TARBALL="cpprestsdk-${CPPRESTSDK_VERSION}.tar.gz"
 declare CPPRESTSDK_DOWNLOAD_URI="https://github.com/Microsoft/cpprestsdk/archive/v${CPPRESTSDK_VERSION}.tar.gz"
 

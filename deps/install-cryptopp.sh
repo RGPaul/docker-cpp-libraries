@@ -23,13 +23,13 @@ set -e
 #=======================================================================================================================
 # settings
 
-declare CRYPTOPP_VERSION=5.6.5
-declare CRYPTOPP_VERSION2=5_6_5
+declare CRYPTOPP_VERSION=6.0.0
+declare CRYPTOPP_VERSION2=6_0_0
 
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare CRYPTOPP_TARBALL="cryptopp_${CRYPTOPP_VERSION}.tar.gz"
 declare CRYPTOPP_DOWNLOAD_URI="https://github.com/weidai11/cryptopp/archive/CRYPTOPP_${CRYPTOPP_VERSION2}.tar.gz"
 

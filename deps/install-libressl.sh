@@ -23,12 +23,12 @@ set -e
 #=======================================================================================================================
 # settings
 
-declare LIBRESSL_VERSION=libressl-2.6.3
+declare LIBRESSL_VERSION=libressl-2.6.4
 
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare LIBRESSL_TARBALL="${LIBRESSL_VERSION}.tar.gz"
 declare LIBRESSL_DOWNLOAD_URI="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/${LIBRESSL_VERSION}.tar.gz"
 declare LIBRESSL_INSTALL_FOLDER="${CURRENT_DIR}/${LIBRESSL_VERSION}"

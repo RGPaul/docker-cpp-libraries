@@ -23,12 +23,12 @@ set -e
 #=======================================================================================================================
 # settings
 
-declare AWS_SDK_VERSION=1.3.24
+declare AWS_SDK_VERSION=1.3.52
 
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare AWS_SDK_TARBALL="aws-sdk-${AWS_SDK_VERSION}.tar.gz"
 declare AWS_SDK_DOWNLOAD_URI="https://github.com/aws/aws-sdk-cpp/archive/${AWS_SDK_VERSION}.tar.gz"
 

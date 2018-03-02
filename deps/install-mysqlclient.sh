@@ -28,7 +28,7 @@ declare MYSQLCLIENT_VERSION=mysql-connector-c-6.1.11
 #=======================================================================================================================
 # globals
 
-declare CURRENT_DIR=$(pwd)
+declare CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare MYSQLCLIENT_TARBALL="${MYSQLCLIENT_VERSION}-src.tar.gz"
 declare MYSQLCLIENT_DOWNLOAD_URI="https://dev.mysql.com/get/Downloads/Connector-C/${MYSQLCLIENT_VERSION}-src.tar.gz"
 declare MYSQLCLIENT_INSTALL_FOLDER="${CURRENT_DIR}/${MYSQLCLIENT_VERSION}"
